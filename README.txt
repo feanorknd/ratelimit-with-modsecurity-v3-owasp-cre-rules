@@ -8,7 +8,7 @@ Must compile libmodsecurity with (--with-lmdb). Also compile using LUA: ensure L
 
 Also MUST configure "working_directory" variable at /etc/nginx/nginx.conf, selecting something like /var/modsecurity, and SHOULD be writeable by user running nginx, as 'nginx' or 'www-data' for example.
 
-Skipping libmodsecurity v2 functions to decrease values, as v3 does not support yet 'deprecatevar' or 'expirevar' functions. Using LUA script to decrease. It's a modified version of: https://github.com/loadbalancerorg/modsec_decrement_script
+Skipping libmodsecurity v2 functions to decrease values, as v3 does not support yet 'deprecatevar' or 'expirevar' functions. Using LUA script to decrease. It's a modified version of: https://github.com/loadbalancerorg/modsec_decrement_script by Andrew Howe (2020)
 
 Decreasing hits via lua script will be done only when processing a new request, and will consider how much time it took... Also consider removing modsec-shared-collections* and reloading nginx from time to time to clean-up database and remove old garbage.
 
